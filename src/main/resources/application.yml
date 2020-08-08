@@ -1,0 +1,61 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  profiles:
+    active: dev
+  jackson:
+    default-property-inclusion: non_null
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+    serialization:
+      indent_output: true
+      write_null_map_values: true
+      write_dates_as_timestamps: false
+    deserialization:
+      fail_on_unknown_properties: false
+    parser:
+      allow_unquoted_control_chars: true
+      allow_single_quotes: true
+  aop:
+    auto: true
+    proxy-target-class: true
+  transaction:
+    rollback-on-commit-failure: true
+  resources:
+    static-locations: classpath:/static/,classpath:/META-INF/resources/
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # schema: classpath:import.sql
+    druid:
+      max-wait: 30000
+      query-timeout: 10
+      validation-query: SELECT 1
+      use-global-data-source-stat: true
+
+mybatis:
+    type-aliases-package: com.example.api.orm.entity
+    mapper-locations: classpath:mappings/*.xml
+
+mapper:
+  mappers:
+    - com.example.api.orm.base.TkBaseMapper
+  notEmpty: true
+  identity: MYSQL
+  safeDelete: true
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: false
+  supportMethodsArguments: false
+  pageSizeZero: false #pageSize=0
+
+jpush:
+  app-id: 123445
+    level: 1
+    open: 2
+  secret-key: keyyyy
+

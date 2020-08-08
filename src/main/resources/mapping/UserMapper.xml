@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.api.orm.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.api.orm.entity.UserPO">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="sex" jdbcType="INTEGER" property="sex"/>
+    </resultMap>
+
+
+    <!--
+
+    CREATE TABLE `tbl_user` (
+      `id` int(20) unsigned NOT NULL AUTO_INCREMENT,
+      `name` varchar(20) DEFAULT NULL,
+      `sex` int(11) DEFAULT NULL,
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4
+
+    -->
+
+</mapper>
