@@ -85,8 +85,8 @@ spring:
 
 # mybayis相关
 mybatis:
-    type-aliases-package: com.example.api.orm.entity
-    mapper-locations: classpath:mappings/*.xml
+  type-aliases-package: com.example.api.orm.entity
+  mapper-locations: classpath:mappings/*.xml
 mapper:
   mappers:
     - com.example.api.orm.base.TkBaseMapper
@@ -99,11 +99,14 @@ pagehelper:
   supportMethodsArguments: false
   pageSizeZero: false #pageSize=0
 
-
 # 业务配置
 jpush:
   app-id: 123445
-    level: 1
-    open: 2
   secret-key: keyyyy
-
+  key:
+    k1:
+      level: 1
+      open: 1
+    k2:
+      level: 2
+      open: 2
