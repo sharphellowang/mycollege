@@ -1,6 +1,8 @@
 package com.example.api;
 
+import com.example.api.dto.AddrDTO;
 import com.example.api.dto.UserDTO;
+import com.example.api.service.AddrService;
 import com.example.api.service.UserService;
 import com.example.api.util.JsonUtils;
 import org.junit.Test;
@@ -21,6 +23,9 @@ public class ServiceTest {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private AddrService addrService;
+
 
     @Test
     public void testGetAll() {
@@ -28,5 +33,14 @@ public class ServiceTest {
         logger.info(JsonUtils.toJSON(data));
     }
 
+    @Test
+    public void testAddrInsert() {
+
+        AddrDTO param = new AddrDTO();
+        param.setUserId(123L);
+        param.setAddr("大冲");
+
+        addrService.insertOne(param);
+    }
 
 }

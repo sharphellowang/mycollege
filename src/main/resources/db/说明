@@ -1,0 +1,7 @@
+1. ds0.sql与ds1.sql对应两个库脚本, 这两个库中都有user0, user1表.
+使用了sharding-jdbc框架对逻辑表user做了简单的分库分表,
+按照userid%2的规则会自动路由到ds0/ds1库的user0/user1表, 具体规则详见resources/application.yml配置
+
+
+2. 补充了addr表以及对应的操作代码. 由于只对了逻辑user表做分库分表策略, 并没有对addr的策略, 因此addr表的操作会在默认的配置的数据库.
+见resources/application.yml配置的配置项-> default-data-source-name: ds0.

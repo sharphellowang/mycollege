@@ -50,13 +50,11 @@ sharding:
     # 分库分表配置
     config:
       sharding:
-#        default-database-strategy: # 默认分库策略
-#          inline:
-#            algorithm-expression: ds$->{id % 2}  # 按照 {id%2} 来选择数据库
-#            sharding-column: id # 用于路由的字段
+        default-data-source-name: ds0  # 指定未配置分片规则的表将通过默认数据源定位, 这里指定"ds0"数据源
         tables:
-          user: # 逻辑表user
-            actual-data-nodes: ds$->{0..1}.user$->{0..1} # 实际表
+          user: # 为逻辑表user指定分库分表规则
+            actual-data-nodes: ds$->{0..1}.user$->{0..1} # 实际库表
+            key-generator-column-name: id   #自增列名称
             table-strategy:
               inline:
                 algorithm-expression: user$->{id % 2} #按照 {id%2} 来选择表

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.api.orm.mapper.AddrMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.api.orm.entity.AddrPO">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="addr" property="addr"/>
+    </resultMap>
+
+
+    <!--
+
+    CREATE TABLE `addr` (
+      `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+      `user_id` bigint(20) DEFAULT NULL,
+      `addr` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+    -->
+
+</mapper>

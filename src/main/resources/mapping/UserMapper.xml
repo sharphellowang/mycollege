@@ -3,9 +3,9 @@
 <mapper namespace="com.example.api.orm.mapper.UserMapper">
 
     <resultMap id="BaseResultMap" type="com.example.api.orm.entity.UserPO">
-        <id column="id" jdbcType="BIGINT" property="id"/>
-        <result column="name" jdbcType="VARCHAR" property="name"/>
-        <result column="sex" jdbcType="INTEGER" property="sex"/>
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="sex" property="sex"/>
     </resultMap>
 
 
@@ -16,7 +16,7 @@
       `name` varchar(20) DEFAULT NULL,
       `sex` int(11) DEFAULT NULL,
       PRIMARY KEY (`id`)
-    ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
 
     -->
 
