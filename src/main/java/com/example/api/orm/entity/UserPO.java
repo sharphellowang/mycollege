@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-@Table(name = "tbl_user")
+@Table(name = "user")
 public class UserPO {
 
     @Id
